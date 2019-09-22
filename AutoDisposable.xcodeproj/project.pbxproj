@@ -14,6 +14,7 @@
 		0E7091B62337826F008C5CDA /* Driver+Autodispose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7091B02337826E008C5CDA /* Driver+Autodispose.swift */; };
 		0E7091B72337826F008C5CDA /* ObservableType+Autodispose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7091B12337826F008C5CDA /* ObservableType+Autodispose.swift */; };
 		0E7091B82337826F008C5CDA /* Completable+Autodispose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7091B22337826F008C5CDA /* Completable+Autodispose.swift */; };
+		0E7091BC23380DAE008C5CDA /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 0E7091BB23380DAE008C5CDA /* LICENSE.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		0E7091B02337826E008C5CDA /* Driver+Autodispose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Driver+Autodispose.swift"; sourceTree = "<group>"; };
 		0E7091B12337826F008C5CDA /* ObservableType+Autodispose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ObservableType+Autodispose.swift"; sourceTree = "<group>"; };
 		0E7091B22337826F008C5CDA /* Completable+Autodispose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Completable+Autodispose.swift"; sourceTree = "<group>"; };
+		0E7091BB23380DAE008C5CDA /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		0E7091A42337712D008C5CDA /* AutoDisposable */ = {
 			isa = PBXGroup;
 			children = (
+				0E7091BB23380DAE008C5CDA /* LICENSE.md */,
 				0E7091BA2337FE5C008C5CDA /* Souces */,
 				0E7091B9233794D8008C5CDA /* SupportingFiles */,
 			);
@@ -156,6 +159,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E7091BC23380DAE008C5CDA /* LICENSE.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
