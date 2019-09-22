@@ -2,7 +2,7 @@
 //  AutoDisposable.h
 //  AutoDisposable
 //
-//  Created by Владислав Терновский on 9/22/19.
+//  Created by v.ternovskyi on 9/22/19.
 //  Copyright © 2019 Vladyslav Ternovskyi. All rights reserved.
 //
 
