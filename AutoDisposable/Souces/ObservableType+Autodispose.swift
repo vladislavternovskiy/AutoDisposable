@@ -31,7 +31,7 @@ public extension ObservableType {
      - parameter to: Observers to receives events.
      - returns: Disposable object that can be used to unsubscribe the observers.
      */
-    public func bindWithAutoDispose<Observer: ObserverType>(_target: AutoDisposable, to observers: Observer...) where Observer.Element == Element? {
+    public func bindWithAutoDispose<Observer: ObserverType>(_ target: AutoDisposable, to observers: Observer...) where Observer.Element == Element? {
         let disposable = self.map { $0 as Element? }.bind(to: observers)
         target.subscriptions.append(disposable)
     }
