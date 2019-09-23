@@ -17,11 +17,10 @@ public extension SharedSequenceConvertibleType where SharingStrategy == DriverSh
      
      In this form it's equivalent to `subscribe` method, but it communicates intent better.
      
-     - parameter target: An object that composes subscribtions and destroys them on deinit.
      - parameter observer: Observer that receives events.
      - returns: Disposable object that can be used to unsubscribe the observer from the subject.
      */
-    public func driveWithAutoDispose<Observer: ObserverType>(target: AutoDisposable, observer: Observer) where Observer.Element == Element {
+    public func driveWithAutoDispose<Observer: ObserverType>(_ target: AutoDisposable, observer: Observer) where Observer.Element == Element {
         let disposable = drive(observer)
         target.subscriptions.append(disposable)
     }
@@ -32,11 +31,10 @@ public extension SharedSequenceConvertibleType where SharingStrategy == DriverSh
      
      In this form it's equivalent to `subscribe` method, but it communicates intent better.
      
-     - parameter target: An object that composes subscribtions and destroys them on deinit.
      - parameter observer: Observer that receives events.
      - returns: Disposable object that can be used to unsubscribe the observer from the subject.
      */
-    public func driveWithAutoDispose<Observer: ObserverType>(target: AutoDisposable, observer: Observer) where Observer.Element == Element? {
+    public func driveWithAutoDispose<Observer: ObserverType>(_ target: AutoDisposable, observer: Observer) where Observer.Element == Element? {
         let disposable = drive(observer)
         target.subscriptions.append(disposable)
     }
@@ -45,11 +43,10 @@ public extension SharedSequenceConvertibleType where SharingStrategy == DriverSh
      Creates new subscription and sends elements to `BehaviorRelay`.
      This method can be only called from `MainThread`.
      
-     - parameter target: An object that composes subscribtions and destroys them on deinit.
      - parameter relay: Target relay for sequence elements.
      - returns: Disposable object that can be used to unsubscribe the observer from the relay.
      */
-    public func driveWithAutoDispose(target: AutoDisposable, relay: BehaviorRelay<Element>) {
+    public func driveWithAutoDispose(_ target: AutoDisposable, relay: BehaviorRelay<Element>) {
         let disposable = drive(relay)
         target.subscriptions.append(disposable)
     }
@@ -58,11 +55,10 @@ public extension SharedSequenceConvertibleType where SharingStrategy == DriverSh
      Creates new subscription and sends elements to `BehaviorRelay`.
      This method can be only called from `MainThread`.
      
-     - parameter target: An object that composes subscribtions and destroys them on deinit.
      - parameter relay: Target relay for sequence elements.
      - returns: Disposable object that can be used to unsubscribe the observer from the relay.
      */
-    public func driveWithAutoDispose(target: AutoDisposable, relay: BehaviorRelay<Element?>) {
+    public func driveWithAutoDispose(_ target: AutoDisposable, relay: BehaviorRelay<Element?>) {
         let disposable = drive(relay)
         target.subscriptions.append(disposable)
     }
@@ -73,7 +69,6 @@ public extension SharedSequenceConvertibleType where SharingStrategy == DriverSh
      
      Error callback is not exposed because `Driver` can't error out.
      
-     - parameter target: An object that composes subscribtions and destroys them on deinit.
      - parameter onNext: Action to invoke for each element in the observable sequence.
      - parameter onCompleted: Action to invoke upon graceful termination of the observable sequence.
      gracefully completed, errored, or if the generation is canceled by disposing subscription)
@@ -81,7 +76,7 @@ public extension SharedSequenceConvertibleType where SharingStrategy == DriverSh
      gracefully completed, errored, or if the generation is canceled by disposing subscription)
      - returns: Subscription object used to unsubscribe from the observable sequence.
      */
-    public func driveWithAutoDispose(target: AutoDisposable, onNext: ((Element) -> Void)? = nil, onCompleted: (() -> Void)? = nil, onDisposed: (() -> Void)? = nil) {
+    public func driveWithAutoDispose(_ target: AutoDisposable, onNext: ((Element) -> Void)? = nil, onCompleted: (() -> Void)? = nil, onDisposed: (() -> Void)? = nil) {
         let disposable = drive(onNext: onNext, onCompleted: onCompleted, onDisposed: onDisposed)
         target.subscriptions.append(disposable)
     }

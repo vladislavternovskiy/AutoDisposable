@@ -4,7 +4,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "AutoDisposable"
-  spec.version      = "1.0.1"
+  spec.version      = "1.0.2"
   spec.summary      = "RxSwift extensions for automatically disposing of observables."
   spec.homepage     = "vladislav.ternovskii@gmail.com"
   spec.description  = <<-DESC

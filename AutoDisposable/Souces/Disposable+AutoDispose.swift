@@ -11,7 +11,7 @@ import RxSwift
 public extension Disposable {
     
     /// Add a disposable resource to the autodisposing subscriptions
-    public func setAutoDispose(target: AutoDisposable) {
+    public func setAutoDispose(_ target: AutoDisposable) {
         target.subscriptions.append(self)
     }
 }
