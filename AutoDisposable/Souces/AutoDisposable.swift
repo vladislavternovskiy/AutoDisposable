@@ -14,7 +14,7 @@ public protocol AutoDisposable: class {
     var subscriptions: [Disposable] { get set }
 }
 
-public class AutoDisposableController: UIViewController, AutoDisposable {
+open class AutoDisposableController: UIViewController, AutoDisposable {
     
     public var subscriptions = [Disposable]()
     
@@ -23,7 +23,7 @@ public class AutoDisposableController: UIViewController, AutoDisposable {
     }
 }
 
-public class AutoDispose: AutoDisposable {
+open class AutoDispose: AutoDisposable {
     
     public var subscriptions = [Disposable]()
     
