@@ -4,7 +4,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "AutoDisposable"
-  spec.version      = "1.0.2beta3"
+  spec.version      = "1.0.3"
   spec.summary      = "RxSwift extensions for automatically disposing of observables."
   spec.homepage     = "vladislav.ternovskii@gmail.com"
   spec.description  = <<-DESC
@@ -20,14 +20,12 @@ Pod::Spec.new do |spec|
   spec.social_media_url   = "https://www.linkedin.com/in/vladislav-ternovskiy-494995119"
   spec.source       = { :git => "https://github.com/BiohazardUA/AutoDisposable.git", :tag => spec.version.to_s }
 
-  spec.ios.deployment_target = '8.0'
-  spec.osx.deployment_target = '10.9'
-  spec.watchos.deployment_target = '3.0'
-  spec.tvos.deployment_target = '9.0'
+  spec.ios.deployment_target = '10.0'
+  spec.tvos.deployment_target = '10.0'
 
   spec.requires_arc = true
 
-  spec.source_files          = 'AutoDisposable/**/*.{swift,h,m,plist}', 'Platform/**/*.swift'
+  spec.source_files          = 'AutoDisposable/**/*.{swift,h,m}', 'Platform/**/*.swift'
 
   spec.dependency 'RxSwift', '~> 5'
   spec.dependency 'RxCocoa', '~> 5'

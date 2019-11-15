@@ -16,7 +16,7 @@ public extension PrimitiveSequenceType where Trait == CompletableTrait, Element 
      - parameter observer: Observer that receives events.
      - returns: Subscription for `observer` that can be used to cancel production of sequence elements and free resources.
      */
-    public func subscribeWithAutoDispose(_ target: AutoDisposable, observer: @escaping (CompletableEvent) -> Void) {
+    func subscribeWithAutoDispose(_ target: AutoDisposable, observer: @escaping (CompletableEvent) -> Void) {
         let disposable = subscribe(observer)
         target.subscriptions.append(disposable)
     }
@@ -28,7 +28,7 @@ public extension PrimitiveSequenceType where Trait == CompletableTrait, Element 
      - parameter onError: Action to invoke upon errored termination of the observable sequence.
      - returns: Subscription object used to unsubscribe from the observable sequence.
      */
-    public func subscribeWithAutoDispose(_ target: AutoDisposable, onCompleted: (() -> Void)? = nil, onError: ((Swift.Error) -> Void)? = nil) {
+    func subscribeWithAutoDispose(_ target: AutoDisposable, onCompleted: (() -> Void)? = nil, onError: ((Swift.Error) -> Void)? = nil) {
         let disposable = subscribe(onCompleted: onCompleted, onError: onError)
         target.subscriptions.append(disposable)
     }

@@ -16,7 +16,7 @@ public extension PrimitiveSequenceType where Trait == SingleTrait {
      - parameter observer: Observer that receives events.
      - returns: Subscription for `observer` that can be used to cancel production of sequence elements and free resources.
      */
-    public func subscribeWithAutoDispose(_ target: AutoDisposable, observer: @escaping (SingleEvent<Element>) -> Void) {
+    func subscribeWithAutoDispose(_ target: AutoDisposable, observer: @escaping (SingleEvent<Element>) -> Void) {
         let disposable = subscribe(observer)
         target.subscriptions.append(disposable)
     }
@@ -28,7 +28,7 @@ public extension PrimitiveSequenceType where Trait == SingleTrait {
      - parameter onError: Action to invoke upon errored termination of the observable sequence.
      - returns: Subscription object used to unsubscribe from the observable sequence.
      */
-    public func subscribeWithAutoDispose(_ target: AutoDisposable, onSuccess: ((Element) -> Void)? = nil, onError: ((Swift.Error) -> Void)? = nil) {
+    func subscribeWithAutoDispose(_ target: AutoDisposable, onSuccess: ((Element) -> Void)? = nil, onError: ((Swift.Error) -> Void)? = nil) {
         let disposable = subscribe(onSuccess: onSuccess, onError: onError)
         target.subscriptions.append(disposable)
     }

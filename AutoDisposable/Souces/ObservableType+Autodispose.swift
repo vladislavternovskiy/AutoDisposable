@@ -18,7 +18,7 @@ public extension ObservableType {
      - parameter to: Observers to receives events.
      - returns: Disposable object that can be used to unsubscribe the observers.
      */
-    public func bindWithAutoDispose<Observer: ObserverType>(_ target: AutoDisposable, to observers: Observer...) where Observer.Element == Element {
+    func bindWithAutoDispose<Observer: ObserverType>(_ target: AutoDisposable, to observers: Observer...) where Observer.Element == Element {
         let disposable = self.bind(to: observers)
         target.subscriptions.append(disposable)
     }
@@ -31,7 +31,7 @@ public extension ObservableType {
      - parameter to: Observers to receives events.
      - returns: Disposable object that can be used to unsubscribe the observers.
      */
-    public func bindWithAutoDispose<Observer: ObserverType>(_ target: AutoDisposable, to observers: Observer...) where Observer.Element == Element? {
+    func bindWithAutoDispose<Observer: ObserverType>(_ target: AutoDisposable, to observers: Observer...) where Observer.Element == Element? {
         let disposable = self.map { $0 as Element? }.bind(to: observers)
         target.subscriptions.append(disposable)
     }
@@ -43,7 +43,7 @@ public extension ObservableType {
      - parameter to: Observers to receives events.
      - returns: Disposable object that can be used to unsubscribe the observers.
      */
-    public func bindWithAutoDispose<Observer: ObserverType>(_ target: AutoDisposable, to observers: [Observer]) where Observer.Element == Element {
+    func bindWithAutoDispose<Observer: ObserverType>(_ target: AutoDisposable, to observers: [Observer]) where Observer.Element == Element {
         let disposable = bind(to: observers)
         target.subscriptions.append(disposable)
     }
@@ -56,7 +56,7 @@ public extension ObservableType {
      - parameter onNext: Action to invoke for each element in the observable sequence.
      - returns: Subscription object used to unsubscribe from the observable sequence.
      */
-    public func bindWithAutoDispose(_ target: AutoDisposable, onNext: @escaping (Element) -> Void) {
+    func bindWithAutoDispose(_ target: AutoDisposable, onNext: @escaping (Element) -> Void) {
         let disposable = self.observeOn(MainScheduler()).bind(onNext: onNext)
         target.subscriptions.append(disposable)
     }
@@ -88,7 +88,7 @@ public extension ObservableType {
      gracefully completed, errored, or if the generation is canceled by disposing subscription).
      - returns: Subscription object used to unsubscribe from the observable sequence.
      */
-    public func subscribeWithAutoDispose(_ target: AutoDisposable, onNext: ((Element) -> Void)? = nil, onError: ((Error) -> Void)? = nil, onCompleted: (() -> Void)? = nil, onDisposed: (() -> Void)? = nil) {
+    func subscribeWithAutoDispose(_ target: AutoDisposable, onNext: ((Element) -> Void)? = nil, onError: ((Error) -> Void)? = nil, onCompleted: (() -> Void)? = nil, onDisposed: (() -> Void)? = nil) {
         let disposable = subscribe(onNext: onNext, onError: onError, onCompleted: onCompleted, onDisposed: onDisposed)
         target.subscriptions.append(disposable)
     }
@@ -99,7 +99,7 @@ public extension ObservableType {
      - parameter on: Action to invoke for each event in the observable sequence.
      - returns: Subscription object used to unsubscribe from the observable sequence.
      */
-    public func subscribeWithAutoDispose(_ target: AutoDisposable, on: @escaping (Event<Element>) -> Void) {
+    func subscribeWithAutoDispose(_ target: AutoDisposable, on: @escaping (Event<Element>) -> Void) {
         let disposable = subscribe(on)
         target.subscriptions.append(disposable)
     }

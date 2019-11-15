@@ -84,7 +84,7 @@ There are two ways to adding your disposables to `bag`:
 
 ### Use the following entry in your Podfile:
 ```
-pod 'AutoDisposable', :git => 'https://github.com/BiohazardUA/AutoDisposable.git', :tag => '1.0.2.beta2'
+pod 'AutoDisposable'
 ```
 
 ## License
