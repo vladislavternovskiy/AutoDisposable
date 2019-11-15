@@ -4,7 +4,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "AutoDisposable"
-  spec.version      = "1.0.2"
+  spec.version      = "1.0.2beta3"
   spec.summary      = "RxSwift extensions for automatically disposing of observables."
   spec.homepage     = "vladislav.ternovskii@gmail.com"
   spec.description  = <<-DESC
@@ -27,7 +27,7 @@ Pod::Spec.new do |spec|
 
   spec.requires_arc = true
 
-  spec.source_files          = 'AutoDisposable/**/*.{swift,h,m}', 'Platform/**/*.swift'
+  spec.source_files          = 'AutoDisposable/**/*.{swift,h,m,plist}', 'Platform/**/*.swift'
 
   spec.dependency 'RxSwift', '~> 5'
   spec.dependency 'RxCocoa', '~> 5'
